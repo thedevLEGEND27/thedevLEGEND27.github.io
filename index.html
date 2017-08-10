@@ -53,9 +53,9 @@
 					<section id="banner" class="major">
 						<div class="inner">
 							<header class="major">
-								<h1>This is <span class="w3-text-yellow">Magnus</span> </h1><br>
-								<h2>We build <span class="rotate4">Stunning,Perfect,Complex,Useful,Interesting</span></h2>
-								<h2>Sites for your business</h2>
+								<h1>This is <span id="color-animate">Magnus</span> </h1><br>
+								<h2>We build <span class="rotate4">Stunning,Perfect,Complex,Useful,Interesting</span> sites for your business</h2>
+
 							</header>
 							<div class="content">
 								<p>A responsive site template designed by HTML5 UP<br />
@@ -216,6 +216,7 @@
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery-color.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
@@ -245,9 +246,42 @@
                     animation: "spin",
                     speed: 2000
                 });
-                console.log("PORN");
+                window.setInterval(changeColor,1500);
             });
+            /*
+            	Copyright Ryan Samarakoon
+            	https://simplyballistic.github.io
+            	You care welcome to use this color changer if you retain this licence
+             */
+            var color=0;
+            function changeColor(){
+                var colorString="#ff9800";
+                switch(color) {
+                    case 0:
+                        //cyan
+                        colorString="#00bcd4";
+                        break;
+                    case 1:
+                        //lime
+                        colorString="#cddc39";
+                        break;
+					case 2:
+					    //teal
+					    colorString="#009688";
+					    break;
 
+                    default:
+                        //orange
+                        colorString="#ff9800";
+                }
+
+                $("#color-animate").animate({
+                    color: colorString
+                }, 1000 );
+                color++;
+                if(color>3)
+                    color=0;
+			}
 		</script>
 
 	</body>
