@@ -11,7 +11,7 @@
  *
  * ========================================================== */
 
-!function($){
+!function ($) {
 
     var defaults = {
         animation: "dissolve",
@@ -19,46 +19,46 @@
         speed: 2000
     };
 
-    $.fx.step.textShadowBlur = function(fx) {
+    $.fx.step.textShadowBlur = function (fx) {
         $(fx.elem).prop('textShadowBlur', fx.now).css({textShadow: '0 0 ' + Math.floor(fx.now) + 'px black'});
     };
 
-    $.fn.textrotator = function(options){
+    $.fn.textrotator = function (options) {
         var settings = $.extend({}, defaults, options);
 
-        return this.each(function(){
+        return this.each(function () {
             var el = $(this)
             var array = [];
-            $.each(el.text().split(settings.separator), function(key, value) {
+            $.each(el.text().split(settings.separator), function (key, value) {
                 array.push(value);
             });
             el.text(array[0]);
 
             // animation option
-            var rotate = function() {
+            var rotate = function () {
                 switch (settings.animation) {
                     case 'dissolve':
                         el.animate({
-                            textShadowBlur:20,
+                            textShadowBlur: 20,
                             opacity: 0
-                        }, 500 , function() {
+                        }, 500, function () {
                             index = $.inArray(el.text(), array)
-                            if((index + 1) == array.length) index = -1
+                            if ((index + 1) == array.length) index = -1
                             el.text(array[index + 1]).animate({
-                                textShadowBlur:0,
+                                textShadowBlur: 0,
                                 opacity: 1
-                            }, 500 );
+                            }, 500);
                         });
                         break;
 
                     case 'flip':
-                        if(el.find(".back").length > 0) {
+                        if (el.find(".back").length > 0) {
                             el.html(el.find(".back").html())
                         }
 
                         var initial = el.text()
                         var index = $.inArray(initial, array)
-                        if((index + 1) == array.length) index = -1
+                        if ((index + 1) == array.length) index = -1
 
                         el.html("");
                         $("<span class='front'>" + initial + "</span>").appendTo(el);
@@ -73,13 +73,13 @@
                         break;
 
                     case 'flipUp':
-                        if(el.find(".back").length > 0) {
+                        if (el.find(".back").length > 0) {
                             el.html(el.find(".back").html())
                         }
 
                         var initial = el.text()
                         var index = $.inArray(initial, array)
-                        if((index + 1) == array.length) index = -1
+                        if ((index + 1) == array.length) index = -1
 
                         el.html("");
                         $("<span class='front'>" + initial + "</span>").appendTo(el);
@@ -94,13 +94,13 @@
                         break;
 
                     case 'flipCube':
-                        if(el.find(".back").length > 0) {
+                        if (el.find(".back").length > 0) {
                             el.html(el.find(".back").html())
                         }
 
                         var initial = el.text()
                         var index = $.inArray(initial, array)
-                        if((index + 1) == array.length) index = -1
+                        if ((index + 1) == array.length) index = -1
 
                         el.html("");
                         $("<span class='front'>" + initial + "</span>").appendTo(el);
@@ -115,13 +115,13 @@
                         break;
 
                     case 'flipCubeUp':
-                        if(el.find(".back").length > 0) {
+                        if (el.find(".back").length > 0) {
                             el.html(el.find(".back").html())
                         }
 
                         var initial = el.text()
                         var index = $.inArray(initial, array)
-                        if((index + 1) == array.length) index = -1
+                        if ((index + 1) == array.length) index = -1
 
                         el.html("");
                         $("<span class='front'>" + initial + "</span>").appendTo(el);
@@ -136,11 +136,11 @@
                         break;
 
                     case 'spin':
-                        if(el.find(".rotating").length > 0) {
+                        if (el.find(".rotating").length > 0) {
                             el.html(el.find(".rotating").html())
                         }
                         index = $.inArray(el.text(), array)
-                        if((index + 1) == array.length) index = -1
+                        if ((index + 1) == array.length) index = -1
 
                         el.wrapInner("<span class='rotating spin' />").find(".rotating").hide().text(array[index + 1]).show().css({
                             "-webkit-transform": " rotate(0) scale(1)",
@@ -151,9 +151,9 @@
                         break;
 
                     case 'fade':
-                        el.fadeOut(settings.speed, function() {
+                        el.fadeOut(settings.speed, function () {
                             index = $.inArray(el.text(), array)
-                            if((index + 1) == array.length) index = -1
+                            if ((index + 1) == array.length) index = -1
                             el.text(array[index + 1]).fadeIn(settings.speed);
                         });
                         break;
