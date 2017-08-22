@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <!--[if lte IE 8]>
     <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="assets/css/main.css" />
   <!--[if lte IE 9]>
     <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
@@ -78,7 +79,7 @@
         <section>
           <a href="generic.html" class="image">
             <!--Replace image with our photo-->
-            <img src="images/pic08.jpg" alt="" data-position="center center" />
+            <img src="images/pic08.jpg" alt="" data-position="center center" class="wow slideInLeft" />
           </a>
           <div class="content">
             <div class="inner">
@@ -95,26 +96,22 @@
         </section>
         <section>
           <a href="generic.html" class="image">
-                    <img src="images/pic09.jpg" alt="" data-position="top center"/>
+                    <img src="images/pic09.jpg" alt="" data-position="top center" class="wow slideInRight"/>
                 </a>
           <div class="content">
             <div class="inner">
               <header class="major">
                 <h3>Ryan Samarakoon.</h3>
               </header>
-              <p>Hello there!<br>I am the lead programmer and a co-founder of Magnus Designs. We understand you want your business wants to be professional on the web,
+              Hello there! I am the lead programmer and a co-founder of Magnus Designs. We understand you want your business wants to be professional on the web,
                 so we make sure your website hosts the latest and greatest web software out there. I help bring them all together and to truly make yours stand out.
                 I specialise in:
-              <ul>
                 <li>Java</li>
                 <li>Web Markup (HTML/CSS)</li>
                 <li>Javascript</li>
                 <li>C#</li>
-                <li>And more!</li>
-            </ul>
                 You can visit my website below where I demonstrate my skills and assets I bring to the team below,
-                <br>We hope you choose us at <b>Magnus Designs</b>
-              </p>
+              <br><br>
               <ul class="actions">
                 <li><a href="https://simplyballistic.github.io" class="button" target="_blank">Learn more</a></li>
               </ul>
@@ -123,7 +120,7 @@
         </section>
         <section>
           <a href="generic.html" class="image">
-                    <img src="images/pic10.jpg" alt="" data-position="25% 25%"/>
+                    <img src="images/pic10.jpg" alt="" data-position="25% 25%" class="wow slideInLeft"/>
                 </a>
           <div class="content">
             <div class="inner">
@@ -235,6 +232,10 @@
   <!--[if lte IE 8]>
 <script src="assets/js/ie/respond.min.js"></script><![endif]-->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script>
+      new WOW().init();
+  </script>
 
 </body>
 
