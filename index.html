@@ -8,7 +8,7 @@
 
 
 
-
+    <link href="assets/css/noty.css" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/w3-v4.css" />
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -286,6 +286,29 @@
 	<!--Text Rotator-->
 	<script type="text/javascript" src="text-rotator/text-rotator.js"></script>
 	<link rel="stylesheet" type="text/css" href="text-rotator/textrotator.css" />
+    <!--Noty-->
+    <script src="assets/js/noty.js" type="text/javascript"></script>
+
+    <script>
+        window.setTimeout(function(){
+            new Noty({
+
+                layout   : 'topRight',
+                theme    : 'relax',
+                type: 'alert',
+                closeWith: ['click', 'button'],
+                animation: {
+                    open : 'animated bounceInRight',
+                    close: 'animated fadeOutRight'
+                },
+                text: 'We are giving away 5 FREE sites! Contact us to secure yours',
+                timeout: 10000,
+                progressBar: true,
+
+            }).show();
+        },3000);
+
+    </script>
 	<script>
 		$(document).ready(function() {
 			$(".rotate").textrotator({
