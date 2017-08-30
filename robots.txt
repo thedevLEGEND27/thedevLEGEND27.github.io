@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /.git/
+Disallow: /images/
+Disallow:/text-rotator/
+Disallow: .gitignore
