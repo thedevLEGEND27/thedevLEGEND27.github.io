@@ -24,15 +24,7 @@
 </head>
 
 <body>
-<!--facebook like-->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -293,7 +285,7 @@
 	<script src="assets/js/jquery.scrolly.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/jquery-color.js"></script>
-	<script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<!-- Wow.js animation scroll reveal -->
@@ -306,28 +298,39 @@
 	<link rel="stylesheet" type="text/css" href="text-rotator/textrotator.min.css" />
 	<!--Noty-->
 	<script src="assets/js/noty.js" type="text/javascript"></script>
+    <!--Facebook-->
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
 	<script>
-		window.setTimeout(function() {
-			new Noty({
+        $(document).ready(window.setTimeout(function () {
+            new Noty({
 
-				layout: 'topRight',
-				theme: 'relax',
-				type: 'alert',
-				closeWith: ['click', 'button'],
-				animation: {
-					open: 'animated bounceInRight',
-					close: 'animated fadeOutRight'
-				},
-				text: 'We are giving away 3 FREE sites! Contact us to secure yours',
-				timeout: 10000,
-				progressBar: true,
+                layout: 'topRight',
+                theme: 'relax',
+                type: 'alert',
+                closeWith: ['click', 'button'],
+                animation: {
+                    open: 'animated bounceInRight',
+                    close: 'animated fadeOutRight'
+                },
+                text: 'We are giving away 3 FREE sites! Contact us to secure yours',
+                timeout: 10000,
+                progressBar: true,
 
-			}).show();
-		}, 3000);
+            }).show();
+        }, 3000));
+
 	</script>
 	<script>
-		$(document).ready(function() {
+
 			$(".rotate").textrotator({
 				animation: "fade",
 				speed: 1250
@@ -349,12 +352,12 @@
 				speed: 2000
 			});
 			window.setInterval(changeColor, 1500);
-		});
-		/*
-			Copyright Ryan Samarakoon
-			https://simplyballistic.github.io
-			You care welcome to use this color changer if you retain this licence
-		 */
+
+            /*
+                Copyright Ryan Samarakoon
+                https://simplyballistic.github.io
+                You care welcome to use this color changer if you retain this licence
+             */
 		var color = 0;
 
 		function changeColor() {
