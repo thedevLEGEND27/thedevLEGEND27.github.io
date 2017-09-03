@@ -2126,9 +2126,6 @@ body, input, select, textarea {
     line-height: 1.65;
 }
 
-input{
-    color: #1d1d1d;
-}
 @media screen and (max-width: 1680px) {
 
     body, input, select, textarea {
